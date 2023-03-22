@@ -1,0 +1,16 @@
+<h2>List</h2>
+
+<div *ngFor="let todo of todos">
+    <a>
+        {{ todo.name }} {{ todo.hour }}
+    </a>
+    <p *ngIf="todo.description">
+        Description: {{ todo.description }}
+    </p>
+    <button type="button" (click)="completeTodo()">
+        Done
+    </button>
+
+    <app-todo-alerts [todo]="todo" (addDescription)="onAddDescription()">
+    </app-todo-alerts>
+</div>
